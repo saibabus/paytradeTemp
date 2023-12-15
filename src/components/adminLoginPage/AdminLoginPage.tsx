@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./AdminLoginPage.module.css";
 import CustomButton from "@/libraryComponents/customButton/CustomButton";
+import CustomInput from "@/libraryComponents/customInput/CustomInput";
 
 const AdminLoginPage = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -12,30 +13,6 @@ const AdminLoginPage = () => {
     console.log(isChecked);
   };
   return (
-    // <div className=" container ">
-    //   <h1 className="text-center mb-3 mt-0">Administrator</h1>
-    //   <p className="text-center mb-4">
-    //     Use your Administrator Accout to sign in
-    //   </p>
-    //   <label className="mb-5 text-center">Email ID</label>
-    //   <form onSubmit={(event) => handleSign(event)}>
-    //     <input type="email" required placeholder="Email" />
-    //     <input type="password" required placeholder="Password" />
-    //     <div>
-    //       <input
-    //         type="checkbox"
-    //         checked={isChecked}
-    //         onChange={() => setIsChecked(!isChecked)}
-    //       />
-    //       <label>Remember me</label>
-    //     </div>
-    //     <button type="submit">Sign In</button>
-    //     <p>
-    //       By selecting Sign In, you agree to our <span>Terms</span>
-    //       and acknowledge our <span>Privacy Statement</span>.
-    //     </p>
-    //   </form>
-    // </div>
     <div className={`form-box mt-2 ${styles.conatainerWidth}`}>
       <div className="container sign-in-form">
         <div className="text-center mb-3 mt-0">Administrator</div>
@@ -50,12 +27,12 @@ const AdminLoginPage = () => {
             >
               Email ID
             </label>
-            <input
+            <CustomInput
               type="text"
               className="form-control"
               id="username"
-              name="username"
-              placeholder="Email ID"
+              name={"username"}
+              placeholder={"Email ID"}
               required
             />
 
@@ -82,14 +59,10 @@ const AdminLoginPage = () => {
               </label>
             </div>
           </div>
-          {/* <button type="submit" className="btn btn-primary mt-3 w-100 btn-sz">
-            Sign In
-          </button> */}
           <CustomButton
             type={"submit"}
             children={"Sign In"}
-            className="btn btn-primary w-100"
-            disabled
+            className="btn btn-primary mt-3 w-100"
           />
 
           <div className="mt-4 text-center">

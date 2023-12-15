@@ -1,7 +1,6 @@
-import { ReactNode } from "react";
-import ReactBootstrap from "react-bootstrap";
+import { ButtonProps } from "react-bootstrap/Button";
 
-export interface IButton extends ReactBootstrap.ButtonProps {
-  customStyle?: any;
+export interface CustomButtonProps extends ButtonProps {
+  customStyle?: React.CSSProperties;
   className?: string;
 }

@@ -1,14 +1,9 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { IButton } from "./CustomButton.types";
+import { CustomButtonProps } from "./CustomButton.types";
 
-const CustomButton = ({
-  children,
-  onClick,
-  customStyle = {},
-  className = "",
-  ...rest
-}: IButton) => {
+const CustomButton: React.FC<CustomButtonProps> = (props) => {
+  const { onClick, className, customStyle, children, ...rest } = props;
   const baseClass = "custom-button";
   return (
     <Button
