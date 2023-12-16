@@ -47,7 +47,7 @@ const AdminLoginPage = () => {
             />
           </div>
           <CustomCheckBoxAndRadio
-            label="test check"
+            label="Remember me"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             className="form-check "
