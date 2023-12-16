@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./AdminLoginPage.module.css";
 import CustomButton from "@/libraryComponents/customButton/CustomButton";
 import CustomInput from "@/libraryComponents/customInput/CustomInput";
+import CustomCheckBoxAndRadio from "@/libraryComponents/customCheckBoxAndRadio/CustomCheckBoxAndRadio";
 
 const AdminLoginPage = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -28,7 +29,7 @@ const AdminLoginPage = () => {
               Email ID
             </label>
             <CustomInput
-              type="text"
+              type="email"
               className="form-control"
               id="username"
               name={"username"}
@@ -36,8 +37,8 @@ const AdminLoginPage = () => {
               required
             />
 
-            <input
-              type="text"
+            <CustomInput
+              type="password"
               className="form-control mt-3"
               id="password"
               name="password"
@@ -45,24 +46,16 @@ const AdminLoginPage = () => {
               required
             />
           </div>
-          <div className="remember-forgot">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="rememberMe"
-                checked={isChecked}
-                onChange={() => setIsChecked(!isChecked)}
-              />
-              <label className="form-check-label" htmlFor="rememberMe">
-                Remember me
-              </label>
-            </div>
-          </div>
+          <CustomCheckBoxAndRadio
+            label="test check"
+            checked={isChecked}
+            onChange={() => setIsChecked(!isChecked)}
+            className="form-check "
+          />
           <CustomButton
             type={"submit"}
             children={"Sign In"}
-            className="btn btn-primary mt-3 w-100"
+            className="btn  mt-3 w-100"
           />
 
           <div className="mt-4 text-center">
